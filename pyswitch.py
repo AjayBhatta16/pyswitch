@@ -1,4 +1,4 @@
-# pyswitch version 1.0
+# pyswitch version 1.0.2
 class Switch:
     def __init__(self,target):
         self.target = target
@@ -6,6 +6,7 @@ class Switch:
     
     def case(self,case):
         self.cases.append(self.target == case)
+        #print(self.target==case)
         return self.target == case
     
     def default(self):
@@ -16,6 +17,7 @@ class Switch:
 
     def restart(self,newTarget):
         self.target = newTarget
+        self.cases = []
 
 """
 Example:
@@ -39,4 +41,5 @@ if s.default():
 """
 Changelog:
 1.0.1 - added restart method
+1.0.2 - fixed default method not working after restart
 """
